@@ -7,200 +7,125 @@
 		<link rel="stylesheet" href="style.css" type="text/css">
 		<?php include 'CSS/main.css'; ?>
         <style>
-			:root {
- --background: #1d2d50;
- --accent: #fcdab7;
- --accent2: #1e5f74;
- --color: #fefefe;
- --dull: #b8b8b8;
- --error: #e74c3c;
- --highlight: rgba(255,255,255,.05);
+		* {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-	margin: 0;
-	padding: 0;
-	font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-	height: 100vh;
-	width: 100%;
-	background: #1d2d50;
-	color: var(--color);
+    font-size: 18px;
+    font-family: 'Poppins',Arial, Helvetica, sans-serif;
 }
+
+section {
+    background-color: grey;
+    height: 100vh;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.intro>h1 {
+    font-size: 40px;
+}
+
 h1 {
-	font-size: 5em;
-	margin: 40px 0;
+    margin-bottom: 20px;
 }
 
-.hidden {
-	position: absolute;
-	left: -1000%;
-	top: -1000%;
-	height: 0;
-	width: 0;
-	pointer-events: none;
-	opacity: 0;
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
 }
 
-.formWrapper {
-	height: 100%;
-	width: 100%;
-	display: grid;
-	align-items: center;
-	justify-content: center;
-}
-form {
-	width: 95vw;
-	max-width: 500px;
-	box-sizing: border-box;
-	padding: 50px 0;
-}
-form h1 {
-	margin: 0 0 15px 0;
-	font-size: 3em;
-}
-.inputblock {
-	position: relative;
-	display: block;
-	padding: 20px 0;
-	clear: both;
-}
-.inputblock input {
-	width: 100%;
-	padding: 7px;
-	box-sizing: border-box;
-	display: block;
-	background: transparent;
-	outline: none;
-	font-family: inherit;
-	font-size: 15px;
-	color: inherit;
-	border: 0;
-	margin-top: 2px;
-	border-bottom: 1px solid var(--color);
-}
-.inputblock label {
-	display: block;
-	font-size: 13px;
-	color: var(--dull);
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: 300;
+.login {
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 30px 60px;
+    background-color: rgba(0, 0, 255, 0.501);
+    /* height: 50vh; */
+    /* width: 0 auto; */
 }
 
+.login>h1 {
+    font-size: 30px;
+}
+
+.formm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+label {
+    padding-right: 10px;
+}
+
+.first,
+.second,
+.btn {
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+}
 
 .btn {
-	display: inline-block;
-	padding: 12px 60px;
-	font-size: 18px;
-	border: 2px solid var(--color);
-	border-radius: 2px;
-	cursor: pointer;
-	-webkit-user-select: none;
-	user-select: none;
-	transition: background .3s, color .3s;
-}
-.btn:hover, .btn:active {
-	border: 0;
-	padding: 14px 62px;
-	background: var(--color);
-	color: var(--background);
-}
-.btn:active {
-	box-shadow: inset 0 0 4px 5px rgba(0,0,0,.1);
+    margin-top: 140px;
 }
 
-.errcontainer {
-	font-size: 14px;
-	opacity: 1;
-	transition: opacity .3s;
-}
-.err {
-	margin: 5px 0;
-	color: var(--error);
-}
-.err ul {
-	list-style-type: none;
-	margin: 0;
-	padding-inline-start: 2em;
+
+input {
+    padding: 10px 30px;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid gray;
+    border-radius: 8px;
+    background-color: rgb(149, 149, 217);
+    /* width: 100%; */
 }
 
-.wave {
-	width: 100vw;
-	height: 25vw;
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	z-index: -1;
-	pointer-events: none;
-}
-.wave:nth-child(2) {
-	bottom: -5%;
-	width: 103%;
-	left: -3%;
-}
-form a {
-	position: relative;
-	margin: 0;
-	line-height: 1.4em;
-	display: inline-block;
-	color: var(--dull);
-	text-decoration: none;
-	transition: color .3s;
-}
-.errorcontainer a {
-	display: inline;
-	line-height: normal;
-	text-decoration: underline;
-	color: inherit;
-}
-form a:before {
-	content: "";
-	position: absolute;
-	left: 50%;
-	bottom: 0;
-	height: 1px;
-	background: var(--dull);
-	width: 0px;
-	-webkit-transform: translateX(-50%);
-	-moz-transform: translateX(-50%);
-	-ms-transform: translateX(-50%);
-	-o-transform: translateX(-50%);
-	transform: translateX(-50%);
-	transition: width .5s;
-}
-form a:hover:before {
-	width: 100%;
-}
-form a:hover {
-	color: var(--color);
+input:focus {
+    border: 1px solid black;
+    margin: 0;
+    background-color: rgb(149, 149, 217);
+    color: black;
+    font-size: 14px;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
-.loader {
-	height: 64px;
-	width: 64px;
-	position: fixed;
-	top: calc(50% - 32px);
-	left: calc(50% - 32px);
-	border: 2px solid var(--highlight);
-	border-left: 2px solid var(--color);
-	border-radius: 50%;
-	-webkit-animation: loader 1.5s linear infinite;
-	-moz-animation: loader 1.5s linear infinite;
-	-ms-animation: loader 1.5s linear infinite;
-	-o-animation: loader 1.5s linear infinite;
-	animation: loader 1.5s linear infinite;
+
+input:hover,
+.btn:hover {
+    /* cursor: pointer; */
+    background-color: rgb(69, 69, 69);
 }
 
-@-webkit-keyframes loader {to {-o-transform: rotate(360deg);-ms-transform: rotate(360deg);-moz-transform: rotate(360deg);-webkit-transform: rotate(360deg);transform: rotate(360deg);}}
-@keyframes loader {to {-o-transform: rotate(360deg);-ms-transform: rotate(360deg);-moz-transform: rotate(360deg);-webkit-transform: rotate(360deg);transform: rotate(360deg);}}
-
-
-.message {
-	text-align: center;
+.btn:hover {
+    cursor: pointer;
 }
 
-.message h2 {
-	font-size: 4em;
+@media (min-width:320px) and (max-width:420px) {
+
+    .login {
+        height: 100px;
+        padding: 60px 60px;
+        width: 0 auto;
+    }
+
+    h1 {
+        font-size: 82px;
+    }
+
+    input:hover {
+        background-color: black;
+    }
 }
 
 		</style>
@@ -210,23 +135,38 @@ form a:hover {
 
 	
 	<body>
-    <div>
-        <p>This is me</p>
-    </div>
-		<div class="login">
-			<h1>Login</h1>
-			<form action="login.php" method="post">
-				<label for="username">
-					<i class="fas fa-user"></i>
-				</label>
-				<input type="text" name="username" placeholder="Username" id="username" required>
-				<label for="password">
-					<i class="fas fa-lock"></i>
-				</label>
-				<input type="password" name="password" placeholder="Password" id="password" required>
-				<input type="submit" value="Login">
-			</form>
-		</div>
+    
+		<section>
+			<!-- <p>HKI</p> -->
+			<div class="intro">
+				<h1>WELCOME!</h1>
+				<p>This is me</p>
+			</div>
+			<div class="container">
+				<div class="login">
+					<h1>Login</h1>
+					<form action="login.php" method="post" class="formm">
+						<div class="first">
+							<label for="username">
+								<i class="fas fa-user"></i>
+							</label>
+							<input type="text" name="username" placeholder="Username" id="username" required>
+						</div>
+						<div class="second">
+							<label for="password">
+								<i class="fas fa-lock"></i>
+							</label>
+							<input type="password" name="password" placeholder="Password" id="password" required>
+						</div>
+						<div class="sub">
+							<input type="submit" value="LOGIN" class="btn">
+							
+						</div><!-- <input type="submit" value=""> -->
+					</form>
+				</div>
+			</div>
+		<!-- Code injected by live-server -->
+	</section>
 	<!-- Code injected by live-server -->
 <script>
 	// <![CDATA[  <-- For SVG support
