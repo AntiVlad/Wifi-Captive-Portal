@@ -5,7 +5,6 @@
 		<title>Login</title>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 		<link rel="stylesheet" href="style.css" type="text/css">
-		<?php include 'CSS/main.css'; ?>
         <style>
 		* {
     margin: 0;
